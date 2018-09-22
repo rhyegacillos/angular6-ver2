@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <button class="btn btn-primary mt-4" (click)="onLogButtonClicks()">Display Paragraph</button>
+    <hr>
+  </div>
+  <div class="row mt-4">
+    <p *ngIf="display">Toggling Paragraph</p>
+  </div>
+
+  <div *ngFor="let log of logs; let i = index"
+       [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+       [ngClass]="{'log' : i >= 5}">{{log}}</div>
+
+</div>
