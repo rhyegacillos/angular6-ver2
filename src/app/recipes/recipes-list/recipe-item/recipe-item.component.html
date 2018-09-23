@@ -1,3 +1,15 @@
-<p>
-  recipe-item works!
-</p>
+<a href="#" (click)="onSelected()">
+  <div class="card mt-1">
+    <div class="card-body clearfix">
+      <div class="float-left">
+        <h4>{{recipe.name}}</h4>
+        <p>{{recipe.description}}</p>
+      </div>
+      <div class="float-right w-25">
+        <img [src]="recipe.imagePath"
+             alt="no image"
+             class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</a>
