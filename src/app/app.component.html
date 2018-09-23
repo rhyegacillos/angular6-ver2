@@ -1,0 +1,19 @@
+<div class="container mt-lg-4">
+  <div class="row">
+    <div class="col-sm-12">
+      <app-game-control (emitNumber)="onGetEmitNumber($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5">
+      <app-even
+        *ngFor="let evenNumber of evenNumbers"
+        [evenNumber]="evenNumber">
+      </app-even>
+      <app-odd
+        *ngFor="let oddNumber of oddNumbers"
+        [oddNumber]="oddNumber">
+      </app-odd>
+    </div>
+  </div>
+</div>
