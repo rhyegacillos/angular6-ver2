@@ -1,5 +1,7 @@
-<a href="#" (click)="onSelected()">
-  <div class="card mt-1">
+<a style="cursor: pointer">
+  <div class="card mt-1"
+       [routerLink]="index"
+       routerLinkActive="bg-secondary text-white">
     <div class="card-body clearfix">
       <div class="float-left">
         <h4>{{recipe.name}}</h4>
