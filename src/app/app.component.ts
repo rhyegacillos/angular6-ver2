@@ -9,7 +9,7 @@ import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 export class AppComponent implements OnInit {
   genders = ['Male', 'Female'];
   signUpForm: FormGroup;
-  forbiddentUsernames = ['Chris', 'Anna'];
+  forbiddenUsernames = ['Chris', 'Anna'];
 
   onSubmit() {
     console.log(this.signUpForm)
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
   }
 
   forbiddenNames(control: FormControl): {[s: string]: boolean} {
-    if (this.forbiddentUsernames.indexOf(control.value) !== -1) {
+    if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       return {'nameIsForbidden': true};
     }
 
