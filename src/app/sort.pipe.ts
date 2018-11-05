@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sort'
+  name: 'sort',
+  pure: false
 })
 export class SortPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return value.sort((a, b) => a.name.localeCompare(b.name));
+  transform(value: any, property: string): any {
+    return value.sort((a, b) => a[property].localeCompare(b[property]));
   }
 
 }
