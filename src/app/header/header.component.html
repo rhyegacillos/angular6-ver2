@@ -13,8 +13,8 @@
       <li class="nav-item dropdown dropleft" appDropdown #r="appDropdown">
         <a class="nav-link dropdown-toggle" role="button">Manage</a>
         <div class="dropdown-menu" [ngClass]="{'show': r.isOpen}">
-          <a class="dropdown-item">Fetch Data</a>
-          <a class="dropdown-item">Save Data</a>
+          <a class="dropdown-item" (click)="onFetchRecipes()">Fetch Data</a>
+          <a class="dropdown-item" (click)="onSaveRecipes()">Save Data</a>
         </div>
     </ul>
   </div>
