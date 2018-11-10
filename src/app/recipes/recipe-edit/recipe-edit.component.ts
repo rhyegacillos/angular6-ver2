@@ -65,7 +65,7 @@ export class RecipeEditComponent implements OnInit {
     //   this.recipeForm.value['name'],
     //   this.recipeForm.value['description'],
     //   this.recipeForm.value['imagePath'],
-    //   this.recipeForm.value['ingredients'])
+    //   this.recipeForm.value['shoppingListState'])
     if (this.editMode) {
 
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
@@ -76,7 +76,7 @@ export class RecipeEditComponent implements OnInit {
     this.router.navigate(['/recipes']);
   }
   onAddIngredient() {
-    (<FormArray>this.recipeForm.get('ingredients')).push(
+    (<FormArray>this.recipeForm.get('shoppingListState')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
         'amount': new FormControl(null, Validators.pattern(/^[1-9]+[0-9]*$/) )
@@ -89,10 +89,10 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onDeleteIngredient(index: number) {
-    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+    (<FormArray>this.recipeForm.get('shoppingListState')).removeAt(index);
   }
 
   getControls() {
-    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+    return (<FormArray>this.recipeForm.get('shoppingListState')).controls;
   }
 }
