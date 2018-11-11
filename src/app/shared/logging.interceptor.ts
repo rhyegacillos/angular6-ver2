@@ -7,7 +7,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 
-export class LoggingInterceptor implements HttpInterceptor{
+export class LoggingInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).
     pipe(

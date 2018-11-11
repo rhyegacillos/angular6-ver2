@@ -1,8 +1,9 @@
 import {Ingredient} from '../../shared/ingredient.model';
 import {Recipe} from '../recipe.model';
 import * as RecipeActions from './recipes.actions';
+import * as fromApp from '../../store/app.reducers';
 
-export interface FeatureState {
+export interface FeatureState extends fromApp.AppState {
   recipes: State;
 }
 
@@ -51,7 +52,7 @@ export function recipeReducers(state = initialState, action: RecipeActions.Recip
       };
     case RecipeActions.DELETE_RECIPE:
       const oldRecipes = [...state.recipes];
-      oldRecipes.splice(action.payload.index, 1);
+      oldRecipes.splice(action.payload, 1);
       return {
         ...state,
         recipes: oldRecipes
