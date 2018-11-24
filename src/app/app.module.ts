@@ -21,7 +21,7 @@ import {environment} from '../environments/environment';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'recipe-app'}),
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
