@@ -15,6 +15,7 @@ import {AuthEffetcs} from './auth/store/auth.effetcs';
 import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import {environment} from '../environments/environment';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffetcs]),
     StoreRouterConnectingModule,
+    BrowserAnimationsModule,
     !environment.production ? StoreDevtoolsModule.instrument() : []
+
   ],
   providers: [],
   bootstrap: [AppComponent]
